@@ -32,7 +32,7 @@
      idx 不能超过 NSMethodSignature 的参数个数
      */
     SEL sel = @selector(logAString:bString:);
-    NSMethodSignature *signature = [[self class] instanceMethodSignatureForSelector:sel];
+    NSMethodSignature *signature = [self methodSignatureForSelector:sel];
     NSInvocation *invocation = [NSInvocation invocationWithMethodSignature:signature];
     [invocation setTarget:self];
     [invocation setSelector:sel];
